@@ -60,7 +60,6 @@ public class Model {
 	public void getGrado() {
 		for(Country c : countries) {
 			c.setNumConf(graph.degreeOf(c));	
-		//	System.out.println(c.getStateNme() + " " + c.getNumConf());
 		}
 	}
 	
