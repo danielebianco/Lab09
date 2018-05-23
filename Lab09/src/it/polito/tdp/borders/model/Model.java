@@ -1,11 +1,10 @@
 package it.polito.tdp.borders.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.*;
 import org.jgrapht.*;
 import org.jgrapht.alg.ConnectivityInspector;
 import org.jgrapht.graph.*;
+import org.jgrapht.traverse.DepthFirstIterator;
 
 import it.polito.tdp.borders.db.BordersDAO;
 
@@ -63,6 +62,20 @@ public class Model {
 		}
 	}
 	
+	public Set<Country> trovaViciniDepthFirstIterator(Country country) {
+
+		// trova il vertice di partenza
+		Country start = countryIdMap.get(country);
+
+		// visita il grafo
+		Set<Country> visitati = new HashSet<>();
+		DepthFirstIterator<Country, DefaultEdge> dfv = new DepthFirstIterator<>(this.graph, start);
+		while (dfv.hasNext())
+			visitati.add(dfv.next());
+
+		return visitati;
+	}
+		
 	public List<Country> getCountries() {
 		return countries;
 	}

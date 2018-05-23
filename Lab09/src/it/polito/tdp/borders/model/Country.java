@@ -82,6 +82,10 @@ public class Country {
 
 	@Override
 	public String toString() {
+		return StateNme;
+	}
+
+	public String stampa() {
 		return StateAbb + " " + StateNme + " " + numConf;
 	}
 	
