@@ -2,7 +2,6 @@ package it.polito.tdp.borders.db;
 
 import java.util.List;
 
-import it.polito.tdp.borders.model.Country;
 import it.polito.tdp.borders.model.Border;
 
 public class TestDAO {
@@ -17,6 +16,6 @@ public class TestDAO {
 		
 		List<Border> borders = dao.getCountryPairs(1996);
 	
-		//	System.out.println(borders.size());
+		System.out.println(borders.size());
 	}
 }
